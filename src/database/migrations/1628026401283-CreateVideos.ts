@@ -5,15 +5,15 @@ export class CreateVideos1628026401283 implements MigrationInterface {
         await queryRunner.createTable(
             new Table({
                 name: "videos",
-                colums: [{
+                columns: [{
                     name: "id",
                     type: "uuid",
-                    isPrimary: "true"
+                    isPrimary: true
                 },
                 {
                     name: "name",
                     type: "varchar",
-                    isUnique: "true"
+                    isUnique: true
                 },
                 {
                     name: "description",
@@ -33,7 +33,7 @@ export class CreateVideos1628026401283 implements MigrationInterface {
                     {
                         name: "fk_videos_category",
                         columnNames: ["category_id"],
-                        referencedTableNAme: "categories",
+                        referencedTableName: "categories",
                         referencedColumnNames: ["id"]
                     },
                 ],
